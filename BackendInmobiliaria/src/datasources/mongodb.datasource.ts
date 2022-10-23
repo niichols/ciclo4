@@ -4,7 +4,7 @@ import {juggler} from '@loopback/repository';
 const config = {
   name: 'mongodb',
   connector: 'mongodb',
-  url: '',
+  url: 'mongodb+srv://prog_web_Inmobiliaria:prog_web_Inmobiliaria@clusterinmobiliaria.wmhgzaa.mongodb.net/Inmobiliaria17?retryWrites=true&w=majority',
   host: '',
   port: 0,
   user: '',

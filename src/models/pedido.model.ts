@@ -37,6 +37,7 @@ export class Pedido extends Entity {
   @hasMany(() => Producto)
   productos: Producto[];
 
+
   @hasOne(() => Persona)
   persona: Persona;
 

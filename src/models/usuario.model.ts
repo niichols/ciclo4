@@ -1,21 +1,15 @@
 import {Entity, model, property, hasMany} from '@loopback/repository';
-import {Pedido} from './pedido.model';
+import {Roles} from './roles.model';
+import {Rolusuarios} from './rolusuarios.model';
 
 @model()
-export class Persona extends Entity {
+export class Usuario extends Entity {
   @property({
     type: 'string',
     id: true,
     generated: true,
   })
   id?: string;
-
-  @property({
-    type: 'string',
-    personaId: true,
-    generated: true,
-  })
-  personaId?: string;
 
   @property({
     type: 'string',
@@ -37,32 +31,24 @@ export class Persona extends Entity {
 
   @property({
     type: 'string',
-    required: false,
   })
   clave?: string;
 
   @property({
     type: 'string',
-    required: false,
   })
   perfil?: string;
 
+  @hasMany(() => Roles, {through: {model: () => Rolusuarios}})
+  roles: Roles[];
 
-  @hasMany(() => Pedido)
-  pedidos: Pedido[];
-
-  @property({
-    type: 'string',
-  })
-  pedidoId?: string;
-
-  constructor(data?: Partial<Persona>) {
+  constructor(data?: Partial<Usuario>) {
     super(data);
   }
 }
 
-export interface PersonaRelations {
+export interface UsuarioRelations {
   // describe navigational properties here
 }
 
-export type PersonaWithRelations = Persona & PersonaRelations;
+export type UsuarioWithRelations = Usuario & UsuarioRelations;

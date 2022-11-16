@@ -5,3 +5,8 @@ export * from './pedido-persona.controller';
 export * from './persona.controller';
 export * from './pedido.controller';
 export * from './producto.controller';
+export * from './producto-pedido.controller';
+export * from './usuario-roles.controller';
+export * from './roles.controller';
+export * from './rol-usuario.controller';
+export * from './usuario.controller';
